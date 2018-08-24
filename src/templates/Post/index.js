@@ -1,3 +1,5 @@
+const _ = require('lodash')
+
 import { Link } from 'gatsby'
 import get from 'lodash/get'
 import React from 'react'
@@ -20,14 +22,11 @@ const Post = ({ data, site, options }) => {
     author,
   } = data.frontmatter
   const { isIndex, adsense } = options
-  const { url } = site;
+  const { url } = site
   const html = get(data, 'html')
   const isMore = isIndex && !!html.match('<!--more-->')
   const fixed = get(image, 'childImageSharp.fixed')
   const pageUrl = url + path
-
-  console.log(data, options, site)
-  console.log(pageUrl, author);
 
   return (
     <div className="article" key={path}>
@@ -39,8 +38,8 @@ const Post = ({ data, site, options }) => {
           <div className="meta">
             <div className="meta-info">
               <time dateTime={date}>{date}</time>
-              {Badges({ items: [category], primary: true })}
-              {Badges({ items: tags })}
+              {Badges({ items: [category], primary: true, type: 'categories' })}
+              {Badges({ items: tags, type: 'tags' })}
             </div>
             {Socials({ link: pageUrl })}
           </div>
@@ -100,15 +99,15 @@ const Button = ({ path, label, primary }) => (
   </Link>
 )
 
-const Badges = ({ items, primary }) =>
+const Badges = ({ items, primary, type }) =>
   map(items, (item, i) => {
     return (
-      <span
+      <a href={`/${type}/${_.kebabCase(item)}`}
         className={`badge ${primary ? 'badge-primary' : 'badge-secondary'}`}
         key={i}
       >
         {item}
-      </span>
+      </a>
     )
   })
 
@@ -135,6 +134,18 @@ const Profile = ({ author }) => (
       <div className="name">{author.name}</div>
     </div>
     <div className="social-accounts">
+      <a href={`https://twitter.com/tamanyan55`} target="_blank" className="share-btn twitter">
+        <i className="fa fa-twitter"></i>
+      </a>
+      <a href={`https://github.com/tamanyan`} target="_blank" className="share-btn github">
+        <i className="fa fa-github"></i>
+      </a>
+      <a href={`https://www.linkedin.com/in/tyoshida`} target="_blank" className="share-btn linkedin">
+        <i className="fa fa-linkedin"></i>
+      </a>
+      <a href={`mailto:tamanyan.ttt@gmail.com`} target="_blank" className="share-btn email">
+        <i className="fa fa-email"></i>
+      </a>
     </div>
     <div className="description">{author.bio}</div>
   </div>

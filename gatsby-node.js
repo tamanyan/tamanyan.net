@@ -1,7 +1,10 @@
-const each = require('lodash/each')
+const _ = require('lodash')
 const Promise = require('bluebird')
 const path = require('path')
 const PostTemplate = path.resolve('./src/templates/index.js')
+const CategoryTemplate = path.resolve('./src/templates/Category/index.js')
+const TagTemplate = path.resolve('./src/templates/Tag/index.js')
+const TagListTemplate = path.resolve('./src/templates/TagList/index.js')
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
@@ -22,6 +25,8 @@ exports.createPages = ({ graphql, actions }) => {
                     frontmatter {
                       layout
                       path
+                      tags
+                      category
                     }
                   }
                 }
@@ -38,7 +43,7 @@ exports.createPages = ({ graphql, actions }) => {
         // Create blog posts & pages.
         const items = data.allFile.edges
         const posts = items.filter(({ node }) => /posts/.test(node.name))
-        each(posts, ({ node }) => {
+        _.each(posts, ({ node }) => {
           if (!node.remark) return
           const { path } = node.remark.frontmatter
           createPage({
@@ -48,7 +53,7 @@ exports.createPages = ({ graphql, actions }) => {
         })
 
         const pages = items.filter(({ node }) => /page/.test(node.name))
-        each(pages, ({ node }) => {
+        _.each(pages, ({ node }) => {
           if (!node.remark) return
           const { name } = path.parse(node.path)
           const PageTemplate = path.resolve(node.path)
@@ -57,6 +62,67 @@ exports.createPages = ({ graphql, actions }) => {
             component: PageTemplate,
           })
         })
+
+        /* ------------- Start creating Tag Pages ------------- */
+
+        // Tag pages:
+        let tags = []
+        // Iterate through each post, putting all found tags into `tags`
+        _.each(posts, edge => {
+          if (_.get(edge, 'node.remark.frontmatter.tags')) {
+            tags = tags.concat(edge.node.remark.frontmatter.tags)
+          }
+        })
+
+        // Eliminate duplicate tags
+        tags = _.uniq(tags)
+
+        // Make tag pages
+        _.each(tags, tag => {
+          createPage({
+            path: `/tags/${_.kebabCase(tag)}/`,
+            component: TagTemplate,
+            context: {
+              tag,
+            },
+          })
+        })
+
+        // Make tag list page
+        createPage({
+          path: `/tags/`,
+          component: TagListTemplate,
+        })
+
+        /* ------------- Finish creating Tag Pages ------------- */
+
+        /* ------------- Start creating Category Pages ------------- */
+
+        // Category pages:
+        let categories = []
+        // Iterate through each post, putting all found tags into `tags`
+        _.each(posts, edge => {
+          if (_.get(edge, 'node.remark.frontmatter.category')) {
+            categories = categories.concat([edge.node.remark.frontmatter.category])
+          }
+        })
+
+        // Eliminate duplicate tags
+        categories = _.uniq(categories)
+
+        // Make tag pages
+        _.each(categories, category => {
+          createPage({
+            path: `/categories/${_.kebabCase(category)}/`,
+            component: CategoryTemplate,
+            context: {
+              category,
+            },
+          })
+        })
+
+        /* ------------- Finish creating Category Pages ------------- */
+
       })
     )
   })

@@ -8,7 +8,6 @@ import Layout from 'components/Layout'
 import Page from 'templates/Page'
 
 const Template = ({ data, location }) => {
-  console.log(data);
   return (
     <div>
       <Layout location={location}>
