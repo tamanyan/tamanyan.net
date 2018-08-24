@@ -58,7 +58,7 @@ TagList.propTypes = {
 
 export default TagList
 
-export const pageQuery = `
+export const pageQuery = graphql`
   query TagsQuery {
     site {
       siteMetadata {

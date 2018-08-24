@@ -62,7 +62,7 @@ Category.propTypes = {
 
 export default Category
 
-export const pageQuery = `
+export const pageQuery = graphql`
   query CategoryPage($category: String) {
     allMarkdownRemark(
       limit: 2000
