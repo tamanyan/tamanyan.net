@@ -9,7 +9,6 @@ import Layout from 'components/Layout'
 const BlogIndex = ({ data, location }) => {
   const posts = get(data, 'remark.posts')
 
-  console.log(data);
   return (
     <Layout location={location}>
       <Meta site={get(data, 'site.meta')} />
