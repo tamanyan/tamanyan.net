@@ -1,0 +1,45 @@
+.fa {
+  display: inline-block;
+  background-size: contain;
+  background-origin: content-box;
+  background-color: transparent;
+  vertical-align: middle;
+  width: 24px;
+  min-width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  margin-top: -12px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.fa-twitter {
+  background-image: url(/svg/twitter.svg);
+  right: 3px;
+}
+
+.fa-hatena {
+  background-image: url(/svg/hatena.svg);
+  right: 3px;
+}
+
+.fa-github {
+  background-image: url(/svg/github.svg);
+  right: 3px;
+}
+
+.fa-linkedin {
+  background-image: url(/svg/linkedin.svg);
+  right: 3px;
+}
+
+.fa-facebook {
+  background-image: url(/svg/facebook.svg);
+  right: 3px;
+}
+
+.fa-email {
+  background-image: url(/svg/email.svg);
+  right: 3px;
+}
