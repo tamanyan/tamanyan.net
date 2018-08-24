@@ -1,0 +1,142 @@
+import { Link } from 'gatsby'
+import get from 'lodash/get'
+import React from 'react'
+import map from 'lodash/map'
+import Img from 'gatsby-image'
+
+import Adsense from 'components/Adsense'
+import Footer from 'components/Footer'
+import './style.scss'
+
+const Post = ({ data, site, options }) => {
+  const {
+    category,
+    tags,
+    description,
+    title,
+    path,
+    date,
+    image,
+    author,
+  } = data.frontmatter
+  const { isIndex, adsense } = options
+  const { url } = site;
+  const html = get(data, 'html')
+  const isMore = isIndex && !!html.match('<!--more-->')
+  const fixed = get(image, 'childImageSharp.fixed')
+  const pageUrl = url + path
+
+  console.log(data, options, site)
+  console.log(pageUrl, author);
+
+  return (
+    <div className="article" key={path}>
+      <div className="container">
+        <div className="info">
+          <Link style={{ boxShadow: 'none' }} to={path}>
+            <h1>{title}</h1>
+          </Link>
+          <div className="meta">
+            <div className="meta-info">
+              <time dateTime={date}>{date}</time>
+              {Badges({ items: [category], primary: true })}
+              {Badges({ items: tags })}
+            </div>
+            {Socials({ link: pageUrl })}
+          </div>
+        </div>
+        <div className="content">
+          <p>{description}</p>
+          {fixed ? (
+            <Img fixed={fixed} style={{ display: 'block', margin: '0 auto' }} />
+          ) : (
+            ''
+          )}
+        </div>
+        <div
+          className="content"
+          dangerouslySetInnerHTML={{
+            __html: isMore ? getDescription(html) : html,
+          }}
+        />
+        <div className="bottom">
+          {isIndex == false ? Socials({ link: pageUrl }) : ''}
+        </div>
+        {isMore ? Button({ path, label: 'MORE', primary: true }) : ''}
+        <hr/>
+        {isIndex == false ? Profile({ author: author }) : ''}
+        {getAd(isIndex, adsense)}
+      </div>
+    </div>
+  )
+}
+
+export default Post
+
+const getAd = (isIndex, adsense) => {
+  return !isIndex ? <Adsense clientId={adsense} slotId="" format="auto" /> : ''
+}
+
+const getDescription = body => {
+  body = body.replace(/<blockquote>/g, '<blockquote class="blockquote">')
+  if (body.match('<!--more-->')) {
+    body = body.split('<!--more-->')
+    if (typeof body[0] !== 'undefined') {
+      return body[0]
+    }
+  }
+  return body
+}
+
+const Button = ({ path, label, primary }) => (
+  <Link className="readmore" to={path}>
+    <span
+      className={`btn btn-outline-primary btn-block ${
+        primary ? 'btn-outline-primary' : 'btn-outline-secondary'
+      }`}
+    >
+      {label}
+    </span>
+  </Link>
+)
+
+const Badges = ({ items, primary }) =>
+  map(items, (item, i) => {
+    return (
+      <span
+        className={`badge ${primary ? 'badge-primary' : 'badge-secondary'}`}
+        key={i}
+      >
+        {item}
+      </span>
+    )
+  })
+
+const Socials = ({ link }) => {
+  return (
+    <span className="social">
+      <a href={`https://b.hatena.ne.jp/entry/s/${link}`} target="_blank" className="share-btn hatena">
+        <i className="fa fa-hatena"></i>
+      </a>
+      <a href={`https://twitter.com/share?url=${link}&amp;text=&amp;hashtags=tamanyannet`} target="_blank" className="share-btn twitter">
+        <i className="fa fa-twitter"></i>
+      </a>
+      <a href={`https://www.facebook.com/sharer/sharer.php?u=${link}`} target="_blank" className="share-btn facebook">
+        <i className="fa fa-facebook"></i>
+      </a>
+    </span>
+  );
+}
+
+const Profile = ({ author }) => (
+  <div className="profile">
+    <div className="name-icon">
+      <img className="icon" src={author.icon} />
+      <div className="name">{author.name}</div>
+    </div>
+    <div className="social-accounts">
+    </div>
+    <div className="description">{author.bio}</div>
+  </div>
+)
+
