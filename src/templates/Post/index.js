@@ -44,14 +44,6 @@ const Post = ({ data, site, options }) => {
             {Socials({ link: pageUrl })}
           </div>
         </div>
-        <div className="content">
-          <p>{description}</p>
-          {fixed ? (
-            <Img fixed={fixed} style={{ display: 'block', margin: '0 auto' }} />
-          ) : (
-            ''
-          )}
-        </div>
         <div
           className="content"
           dangerouslySetInnerHTML={{

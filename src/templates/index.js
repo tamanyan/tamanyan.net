@@ -8,12 +8,19 @@ import Layout from 'components/Layout'
 import Page from 'templates/Page'
 
 const Template = ({ data, location }) => {
+  const url = `${get(data, 'site.meta.url')}${get(data, 'post.frontmatter.path')}`
+  const image = `${get(data, 'site.meta.url')}${get(data, 'post.frontmatter.image.childImageSharp.fixed.src')}`
+  const title = `${get(data, 'site.meta.title')} | ${get(data, 'post.frontmatter.title')}`
+
   return (
     <div>
       <Layout location={location}>
         <Meta
-          title={get(data, 'post.frontmatter.title')}
+          title={title}
           site={get(data, 'site.meta')}
+          url={url}
+          image={image}
+          description={get(data, 'post.frontmatter.description')}
         />
         {get(data, 'post.frontmatter.layout') != 'page' ? (
           <Post
@@ -64,7 +71,7 @@ export const pageQuery = graphql`
         }
         image {
           childImageSharp {
-            fixed(width: 500) {
+            fixed(width: 1200) {
               ...GatsbyImageSharpFixed_withWebp
             }
           }
