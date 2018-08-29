@@ -41,7 +41,7 @@ const Post = ({ data, site, options }) => {
               {Badges({ items: [category], primary: true, type: 'categories' })}
               {Badges({ items: tags, type: 'tags' })}
             </div>
-            {Socials({ link: pageUrl })}
+            {Socials({ link: pageUrl, text: title })}
           </div>
         </div>
         <div
@@ -50,11 +50,11 @@ const Post = ({ data, site, options }) => {
             __html: isMore ? getDescription(html) : html,
           }}
         />
-        {(() => {
+        {((pageUrl, title) => {
           if (isIndex == false) {
-            return <div className="bottom">{Socials({ link: pageUrl })}</div>
+            return <div className="bottom">{Socials({ link: pageUrl, text: title })}</div>
           }
-        })()}
+        })(pageUrl, title)}
         {isMore ? Button({ path, label: 'MORE', primary: true }) : ''}
         <hr />
         {isIndex == false ? Profile({ author: author }) : ''}
@@ -106,7 +106,7 @@ const Badges = ({ items, primary, type }) =>
     )
   })
 
-const Socials = ({ link }) => {
+const Socials = ({ link, text }) => {
   return (
     <span className="social">
       <a
@@ -117,7 +117,7 @@ const Socials = ({ link }) => {
         <i className="fa fa-hatena" />
       </a>
       <a
-        href={`https://twitter.com/share?url=${link}&amp;text=&amp;hashtags=tamanyannet`}
+        href={`https://twitter.com/share?url=${link}&amp;text=${text}&amp;hashtags=tamanyannet`}
         target="_blank"
         className="share-btn twitter"
       >
