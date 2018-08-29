@@ -8,9 +8,18 @@ import Layout from 'components/Layout'
 import Page from 'templates/Page'
 
 const Template = ({ data, location }) => {
-  const url = `${get(data, 'site.meta.url')}${get(data, 'post.frontmatter.path')}`
-  const image = `${get(data, 'site.meta.url')}${get(data, 'post.frontmatter.image.childImageSharp.fixed.src')}`
-  const title = `${get(data, 'site.meta.title')} | ${get(data, 'post.frontmatter.title')}`
+  const url = `${get(data, 'site.meta.url')}${get(
+    data,
+    'post.frontmatter.path'
+  )}`
+  const image = `${get(data, 'site.meta.url')}${get(
+    data,
+    'post.frontmatter.image.childImageSharp.fixed.src'
+  )}`
+  const title = `${get(data, 'post.frontmatter.title')} | ${get(
+    data,
+    'site.meta.title'
+  )}`
 
   return (
     <div>

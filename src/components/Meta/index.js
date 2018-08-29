@@ -8,13 +8,11 @@ const Meta = ({ site, title, url, image, description }) => {
   const metaImage = image || `${get(site, 'url')}/img/tamanyan_net.jpg`
   const metaUrl = url || get(site, 'url')
 
-  // metaTitle = title ? `${title} | ${metaTitle}` : metaTitle
-
   return (
     <Helmet
       title={metaTitle}
       meta={[
-        { name: 'twitter:card', content: 'summary' },
+        { name: 'twitter:card', content: 'summary_large_image' },
         {
           name: 'twitter:site',
           content: `@${get(site, 'twitter')}`,
