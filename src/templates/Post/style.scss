@@ -37,7 +37,7 @@
 }
 
 .article .content {
-  padding-bottom: 10px;
+  // padding-bottom: 10px;
 
   h2 {
     margin-top: 50px;
@@ -117,6 +117,10 @@
   }
 }
 
+.readmore {
+  margin-bottom: 30px;
+  display: block;
+}
 
 .article .social {
   height: 48px;

@@ -19,6 +19,8 @@ author: tamanyan
 デジタルトランスフォーメーションとは企業のビジネスモデルやビジネスプロセスに IT を適用させていく事だ。
 全世界の人々がインターネットに接続できる現代において、無視することはできなくなってきている。
 
+<!--more-->
+
 <div class="article-widget">
   <a class="article-widget-image" href="https://www.leadplus.net/blog/what-is-digital-transformation.html" style="background-image: url('https://www.leadplus.net/hubfs/Imported_Blog_Media/digital-transformation.jpg');" target="_blank">
   </a>
@@ -30,8 +32,6 @@ author: tamanyan
 </div>
 
 タイの日系非 IT 企業のデジタルトランスフォーメーションを進めている真っ最中の私が感じた、**非 IT 企業のエンジニアに求められている事**を話す。
-
-<!--more-->
 
 ## 非 IT 企業のエンジニアに求められる事
 

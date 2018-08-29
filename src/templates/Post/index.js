@@ -50,11 +50,13 @@ const Post = ({ data, site, options }) => {
             __html: isMore ? getDescription(html) : html,
           }}
         />
-        <div className="bottom">
-          {isIndex == false ? Socials({ link: pageUrl }) : ''}
-        </div>
+        {(() => {
+          if (isIndex == false) {
+            return <div className="bottom">{Socials({ link: pageUrl })}</div>
+          }
+        })()}
         {isMore ? Button({ path, label: 'MORE', primary: true }) : ''}
-        <hr/>
+        <hr />
         {isIndex == false ? Profile({ author: author }) : ''}
         {getAd(isIndex, adsense)}
       </div>
@@ -94,7 +96,8 @@ const Button = ({ path, label, primary }) => (
 const Badges = ({ items, primary, type }) =>
   map(items, (item, i) => {
     return (
-      <a href={`/${type}/${_.kebabCase(item)}`}
+      <a
+        href={`/${type}/${_.kebabCase(item)}`}
         className={`badge ${primary ? 'badge-primary' : 'badge-secondary'}`}
         key={i}
       >
@@ -106,17 +109,29 @@ const Badges = ({ items, primary, type }) =>
 const Socials = ({ link }) => {
   return (
     <span className="social">
-      <a href={`https://b.hatena.ne.jp/entry/s/${link}`} target="_blank" className="share-btn hatena">
-        <i className="fa fa-hatena"></i>
+      <a
+        href={`https://b.hatena.ne.jp/entry/s/${link}`}
+        target="_blank"
+        className="share-btn hatena"
+      >
+        <i className="fa fa-hatena" />
       </a>
-      <a href={`https://twitter.com/share?url=${link}&amp;text=&amp;hashtags=tamanyannet`} target="_blank" className="share-btn twitter">
-        <i className="fa fa-twitter"></i>
+      <a
+        href={`https://twitter.com/share?url=${link}&amp;text=&amp;hashtags=tamanyannet`}
+        target="_blank"
+        className="share-btn twitter"
+      >
+        <i className="fa fa-twitter" />
       </a>
-      <a href={`https://www.facebook.com/sharer/sharer.php?u=${link}`} target="_blank" className="share-btn facebook">
-        <i className="fa fa-facebook"></i>
+      <a
+        href={`https://www.facebook.com/sharer/sharer.php?u=${link}`}
+        target="_blank"
+        className="share-btn facebook"
+      >
+        <i className="fa fa-facebook" />
       </a>
     </span>
-  );
+  )
 }
 
 const Profile = ({ author }) => (
@@ -126,20 +141,35 @@ const Profile = ({ author }) => (
       <div className="name">{author.name}</div>
     </div>
     <div className="social-accounts">
-      <a href={`https://twitter.com/tamanyan55`} target="_blank" className="share-btn twitter">
-        <i className="fa fa-twitter"></i>
+      <a
+        href={`https://twitter.com/tamanyan55`}
+        target="_blank"
+        className="share-btn twitter"
+      >
+        <i className="fa fa-twitter" />
       </a>
-      <a href={`https://github.com/tamanyan`} target="_blank" className="share-btn github">
-        <i className="fa fa-github"></i>
+      <a
+        href={`https://github.com/tamanyan`}
+        target="_blank"
+        className="share-btn github"
+      >
+        <i className="fa fa-github" />
       </a>
-      <a href={`https://www.linkedin.com/in/tyoshida`} target="_blank" className="share-btn linkedin">
-        <i className="fa fa-linkedin"></i>
+      <a
+        href={`https://www.linkedin.com/in/tyoshida`}
+        target="_blank"
+        className="share-btn linkedin"
+      >
+        <i className="fa fa-linkedin" />
       </a>
-      <a href={`mailto:tamanyan.ttt@gmail.com`} target="_blank" className="share-btn email">
-        <i className="fa fa-email"></i>
+      <a
+        href={`mailto:tamanyan.ttt@gmail.com`}
+        target="_blank"
+        className="share-btn email"
+      >
+        <i className="fa fa-email" />
       </a>
     </div>
     <div className="description">{author.bio}</div>
   </div>
 )
-
