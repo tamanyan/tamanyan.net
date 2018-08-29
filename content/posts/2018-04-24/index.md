@@ -1,10 +1,10 @@
 ---
 title: 非 IT 企業のエンジニアとして働く
 description: 非 IT 企業のエンジニアに求められている事について話す
-date: "2018-04-24T22:40:32.169Z"
+date: '2018-04-24T22:40:32.169Z'
 image: ./non-tech-company-engineer.jpg
 layout: post
-path: "/non-tech-company-engineer/"
+path: '/non-tech-company-engineer/'
 category: Engineer
 tags:
   - DX
@@ -20,7 +20,7 @@ author: tamanyan
 全世界の人々がインターネットに接続できる現代において、無視することはできなくなってきている。
 
 <div class="article-widget">
-  <a class="article-widget-image" href="https://www.leadplus.net/blog/what-is-digital-transformation.html" style="background-image: url('http://www.leadplus.net/hubfs/Imported_Blog_Media/digital-transformation.jpg');" target="_blank">
+  <a class="article-widget-image" href="https://www.leadplus.net/blog/what-is-digital-transformation.html" style="background-image: url('https://www.leadplus.net/hubfs/Imported_Blog_Media/digital-transformation.jpg');" target="_blank">
   </a>
   <a href="https://www.leadplus.net/blog/what-is-digital-transformation.html" target="_blank">
     <strong class="article-widget-title">デジタルトランスフォーメーションとは？</strong>
@@ -37,7 +37,7 @@ author: tamanyan
 
 - エンジニアリング能力とクラウドの知識
 - デジタルマーケティングとデータの活用の基盤作りと分析
-- 企業のIT戦略の策定
+- 企業の IT 戦略の策定
 
 ## エンジニアリング能力とクラウドの知識
 
@@ -45,7 +45,7 @@ author: tamanyan
 
 しかしながら、自社に実現可能性を検証できるエンジニアを抱えている場合にはこの問題を解決できる可能性がある。今日のオープンソースソフトウェアやクラウドサービス界隈の環境は以前と比べ物にならない程に発達している。その甲斐もあって、Github でちょいちょいと調べれば良いツールを発見する事でき、便利なクラウドサービスが SaaS や PaaS 等で提供されている。それらを上手く組み合わせる事で、以前と比べて遥かに簡単にアプリケーションを開発できるようになっている。
 
-非IT企業は常に開発系のデマンドが存在しないので、むやみにエンジニアを増やす事は難しいだろう。故に、たとえベンダーロックインになったとしても、自社で開発する部分は具体性のある部分のみに抑え、極力 SaaS やPaaS 等を使い、少人数で運用は可能な設計にすべきだろう。
+非 IT 企業は常に開発系のデマンドが存在しないので、むやみにエンジニアを増やす事は難しいだろう。故に、たとえベンダーロックインになったとしても、自社で開発する部分は具体性のある部分のみに抑え、極力 SaaS や PaaS 等を使い、少人数で運用は可能な設計にすべきだろう。
 
 適切な OSS, SaaS, PaaS を選定し、その上でアプリケーションを構築できるエンジニアが内部にいる事で、容易に POC やプロトタイピングの構築が可能で、迅速に意思決定を行う事ができる。
 
@@ -68,7 +68,6 @@ author: tamanyan
 これらを上手く使うと、思ったより簡単に基幹システム（SQL Server）からデータをバルクロードし、
 アップロードできるスケジューラーを作る事ができて、非常に助かった。
 
-
 ## 企業の IT 戦略の策定
 
 この辺の役割はエンジニアというより経営層に近い業務になってくるだろう。
@@ -84,14 +83,15 @@ Web 系企業で当たり前だった事を適用・応用することによっ�
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## まとめ
+
 最後にまとめるとデータ基盤系のエンジニアや、CTO に近いエンジニアはこちらに来ても活躍できるのではないかと感じている。
-逆に「がっつりプロダクト開発したいエンジニア」や「コーディング、テクノロジーにフォーカスしたいエンジニア」はIT企業にいたほうが幸せではないだろうか？
+逆に「がっつりプロダクト開発したいエンジニア」や「コーディング、テクノロジーにフォーカスしたいエンジニア」は IT 企業にいたほうが幸せではないだろうか？
 
 私が感じる非 IT 企業でエンジニアである事の面白さは
 
 - サービス指向でシステムを構築できる
 - 手がつけられていない豊富なデータが存在する
-- Web系企業が持っていない、アセットやプロダクトを持っている
+- Web 系企業が持っていない、アセットやプロダクトを持っている
 - 耕されていない畑がたくさんあって、エンジニアの心をくすぐる
 
 私は特に最後の点を私は気に入っている。「ここに良い土壌があるから、君の良いと思う機材買って、野菜を育ててね」言われてやる気にならない農民がいるだろうか？
