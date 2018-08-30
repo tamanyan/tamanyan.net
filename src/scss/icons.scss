@@ -1,3 +1,36 @@
+a.share-btn:hover {
+  background-color: rgba(62, 147, 198, 0.3);
+}
+
+.share-btn {
+  margin-right: 12px;
+  height: 32px;
+  width: 32px;
+  padding-left: 0px;
+  padding-right: 0px;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+  min-height: 1.875rem;
+  font-weight: 400;
+  font-size: 0.75376rem;
+  line-height: 1;
+  color: #2D2A4A;
+  background-color: transparent;
+  text-decoration: none;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 2px;
+  transition: background-color 0.3s, color 0.15s ease-out, border-color 0.15s ease-out;
+  padding: 0.49812rem 4px;
+  border-color: transparent;
+}
+
 .fa {
   display: inline-block;
   background-size: contain;

@@ -4,11 +4,11 @@
 .article {
   padding-top: 40px;
   padding-bottom: 10px;
-}
 
-.article  h1 {
-  @media screen and (max-width: 480px) {
-    font-size: 24px;
+  h1 {
+    @media screen and (max-width: 480px) {
+      font-size: 24px;
+    }
   }
 }
 
@@ -24,16 +24,16 @@
     letter-spacing: 0.04em;
   }
 
-  .badge {
-    margin-right: 3px;
-  }
-
   time {
     font-size: $font-size-xs;
     color: $gray-500;
     display: inline;
     margin-right: 10px;
   }
+}
+
+.article .info .badge {
+  margin-right: 3px;
 }
 
 .article .content {
@@ -85,17 +85,17 @@
 
     margin-bottom: 8px;
   }
+}
 
-  blockquote {
-    background-color: $gray-100;
-    border-left: 5px solid $gray-200;
-    padding: 0.25em 1.5em;
-    font-size: 1.25rem;
+.article .content blockquote {
+  background-color: $gray-100;
+  border-left: 5px solid $gray-200;
+  padding: 0.25em 1.5em;
+  font-size: 1.25rem;
 
-    a {
-      display: block;
-      word-break: break-word;
-    }
+  a {
+    display: block;
+    word-break: break-word;
   }
 }
 
@@ -129,38 +129,6 @@
   display: block;
 }
 
-a.share-btn:hover {
-  background-color: rgba(62, 147, 198, 0.3);
-}
-
-.share-btn {
-  margin-right: 12px;
-  height: 32px;
-  width: 32px;
-  padding-left: 0px;
-  padding-right: 0px;
-  -webkit-appearance: none;
-  -webkit-tap-highlight-color: transparent;
-  user-select: none;
-  cursor: pointer;
-  white-space: nowrap;
-  position: relative;
-  vertical-align: middle;
-  display: inline-block;
-  min-height: 1.875rem;
-  font-weight: 400;
-  font-size: 0.75376rem;
-  line-height: 1;
-  color: #2D2A4A;
-  background-color: transparent;
-  text-decoration: none;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 2px;
-  transition: background-color 0.3s, color 0.15s ease-out, border-color 0.15s ease-out;
-  padding: 0.49812rem 4px;
-  border-color: transparent;
-}
 
 .meta {
   display: flex;
@@ -188,64 +156,64 @@ a.share-btn:hover {
   flex-wrap: wrap;
   align-content: space-around;
   position: relative;
+}
 
+.article .profile .name-icon .name {
   @media screen and (min-width: 480px) {
-    .name-icon {
-      .name {
-        position: relative;
-        padding-left: 128px;
-        width: 100%;
-        font-size: 18px;
-        font-weight: bold;
-        margin-bottom: 4px;
-      }
-
-      .icon {
-        position: absolute;
-        top: 0px;
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-      }
-    }
-
-    .social-accounts {
-      padding-left: 128px;
-      margin-bottom: 12px;
-    }
-
-    .description {
-      padding-left: 128px;
-      width: 100%;
-    }
+    position: relative;
+    padding-left: 128px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 4px;
   }
 
   @media screen and (max-width: 480px) {
-    .name-icon {
-      .name {
-        position: relative;
-        width: 100%;
-        font-size: 18px;
-        font-weight: bold;
-        margin-bottom: 4px;
-      }
+    position: relative;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+}
 
-      .icon {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        margin-bottom: 12px;
-      }
-    }
+.article .profile .name-icon .icon {
+  @media screen and (min-width: 480px) {
+    position: absolute;
+    top: 0px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
 
-    .social-accounts {
-      margin-bottom: 12px;
-    }
+  @media screen and (max-width: 480px) {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 12px;
+  }
+}
 
-    .description {
-      padding-left: 0px;
-      width: 100%;
-    }
+.article .profile .social-accounts {
+  @media screen and (min-width: 480px) {
+    padding-left: 128px;
+    margin-bottom: 12px;
+  }
+
+  @media screen and (max-width: 480px) {
+    margin-bottom: 12px;
+  }
+}
+
+.article .profile .description {
+  @media screen and (min-width: 480px) {
+    padding-left: 128px;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 480px) {
+    padding-left: 0px;
+    width: 100%;
   }
 }
 
