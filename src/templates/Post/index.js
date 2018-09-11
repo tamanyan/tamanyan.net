@@ -121,7 +121,7 @@ const Socials = ({ link, text }) => {
         <i className="fa fa-hatena" />
       </a>
       <a
-        href={`https://twitter.com/share?url=${link}&amp;text=${text}&amp;hashtags=tamanyannet`}
+        href={`https://twitter.com/share?url=${link}&text=${text}&hashtags=tamanyannet`}
         target="_blank"
         className="share-btn twitter"
       >
