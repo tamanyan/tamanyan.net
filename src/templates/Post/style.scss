@@ -52,6 +52,10 @@
     }
   }
 
+  h4 {
+    font-weight: normal;
+  }
+
   p {
     @media screen and (max-width: 480px) {
       font-size: 16px;
@@ -72,6 +76,14 @@
 
   ul {
     padding-left: 24px;
+
+    @media screen and (max-width: 480px) {
+      margin-bottom: 30px;
+    }
+
+    @media screen and (min-width: 480px) {
+      margin-bottom: 36px;
+    }
   }
 
   li {
@@ -90,12 +102,34 @@
 .article .content blockquote {
   background-color: $gray-100;
   border-left: 5px solid $gray-200;
-  padding: 0.25em 1.5em;
+  padding: 1.0em 1.5em;
   font-size: 1.25rem;
 
   a {
     display: block;
     word-break: break-word;
+  }
+
+  p {
+    margin-bottom: 0px;
+  }
+
+  @media screen and (max-width: 480px) {
+    margin-bottom: 30px;
+  }
+
+  @media screen and (min-width: 480px) {
+    margin-bottom: 36px;
+  }
+}
+
+.article .gatsby-highlight {
+  @media screen and (max-width: 480px) {
+    margin-bottom: 30px;
+  }
+
+  @media screen and (min-width: 480px) {
+    margin-bottom: 36px;
   }
 }
 
