@@ -1,6 +1,6 @@
 ---
 title: TypeScript + Nuxt.js + Firebase (+ SSR) で Web アプリを構築
-description: Firebase, Nuxt.js, TypeScript を用いて、Web アプリを作成する。
+description: Firebase + Nuxt.js + TypeScript を用いて、SSR 可能な Web アプリを構築する。 
 date: '2018-09-12T12:40:32.169Z'
 image: ./typescript-nuxtjs-firebase.jpg
 layout: post
