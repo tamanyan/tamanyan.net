@@ -1,6 +1,6 @@
 ---
 title: TypeScript + Nuxt.js + Firebase (+ SSR) で Web アプリを構築
-description: Firebase 上に SSR を使用した Nuxt.js と TypeScript で Web アプリを作成する上での知見を共有する。
+description: Firebase, Nuxt.js, TypeScript を用いて、Web アプリを作成する。
 date: '2018-09-12T12:40:32.169Z'
 image: ./typescript-nuxtjs-firebase.jpg
 layout: post
@@ -22,12 +22,14 @@ Firebase 上に SSR を使用した Nuxt.js と TypeScript で Web アプリを�
 - Firebase で Nuxt.js のアプリを SSR (サーバサイドレンダリング) する方法
 - Firebase の開発環境と本番環境の分け方
 
-細かい事を話すより、コードを見たほうが分かりやすいので、先に GitHub へのリンクを載せておく。
-<a href="https://github.com/tamanyan/nuxtjs-firebase" target="blank">tamanyan/nuxtjs-firebase</a> を参考にしてくれれば良い。
+コードを見たほうが一目瞭然なので、まず先に GitHub へのリンクを載せておく。
+<a href="https://github.com/tamanyan/nuxtjs-firebase" target="_blank">tamanyan/nuxtjs-firebase</a> を参考にしてくれれば良い。
+
+作成した<a href="https://dev-nuxtjs-sample.firebaseapp.com/" target="_blank">サンプル Web アプリへのリンク</a>
 
 <!--more-->
 
-#### ディレクトリ構成
+#### プロジェクトのディレクトリ構成
 ```
 > tree -L 2 -I 'node_modules' .
 .
