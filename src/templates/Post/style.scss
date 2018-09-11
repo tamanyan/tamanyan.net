@@ -102,7 +102,7 @@
 .article .content blockquote {
   background-color: $gray-100;
   border-left: 5px solid $gray-200;
-  padding: 1.0em 1.5em;
+  padding: 1em 1.5em;
   font-size: 1.25rem;
 
   a {
@@ -162,7 +162,6 @@
   padding-bottom: 8px;
   display: block;
 }
-
 
 .meta {
   display: flex;
@@ -260,7 +259,7 @@
   width: 100%;
   display: table;
   border-collapse: separate;
-  border: 1px solid #E8ECEB;
+  border: 1px solid #e8eceb;
   border-radius: 4px;
   margin-bottom: 30px;
 }
@@ -339,7 +338,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  border-left: 1px solid #E8ECEB;
+  border-left: 1px solid #e8eceb;
 
   @media screen and (max-width: 480px) {
     width: 120px;
@@ -351,4 +350,3 @@
     height: 120px;
   }
 }
-

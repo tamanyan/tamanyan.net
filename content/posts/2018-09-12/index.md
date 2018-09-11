@@ -1,7 +1,7 @@
 ---
-title: TypeScript + Nuxt.js + Firebase で Web アプリを構築
-description: 非 IT 企業のエンジニアに求められている事について話す
-date: '2018-09-03T22:40:32.169Z'
+title: TypeScript + Nuxt.js + Firebase (+ SSR) で Web アプリを構築
+description: Firebase 上に SSR を使用した Nuxt.js と TypeScript で Web アプリを作成する上での知見を共有する。
+date: '2018-09-12T12:40:32.169Z'
 image: ./typescript-nuxtjs-firebase.jpg
 layout: post
 path: '/typescript-nuxtjs-firebase/'
@@ -13,7 +13,7 @@ tags:
 author: tamanyan
 ---
 
-Firebase 上に Nuxt.js と TypeScript で Web アプリを作成する上ので知見を共有する。
+Firebase 上に SSR を使用した Nuxt.js と TypeScript で Web アプリを作成する上での知見を共有する。
 
 #### この記事でわかる事
 
@@ -24,6 +24,8 @@ Firebase 上に Nuxt.js と TypeScript で Web アプリを作成する上ので
 
 細かい事を話すより、コードを見たほうが分かりやすいので、先に GitHub へのリンクを載せておく。
 <a href="https://github.com/tamanyan/nuxtjs-firebase" target="blank">tamanyan/nuxtjs-firebase</a> を参考にしてくれれば良い。
+
+<!--more-->
 
 #### ディレクトリ構成
 ```
@@ -45,8 +47,6 @@ Vuex からモックのユーザー情報（Username/Email）を取得して表�
 
 ![Sample App](./sample-app.jpg)
 
-<!--more-->
-
 ## Nuxt.js の TypeScript テンプレート
 
 今回のサンプルアプリは Nuxt Community の TypeScript で書かれた Nuxt.js のテンプレートを使用した。
@@ -56,7 +56,7 @@ Vuex からモックのユーザー情報（Username/Email）を取得して表�
 vue init nuxt-community/typescript-template nuxtjs-firebase
 ```
 
-※ package.json を見ると TypeScript が 3 以降になっていないので、修正したい場合は適宜修正する。
+※ package.json を見ると TypeScript が 3 以上になっていないので、適宜修正する。
 
 ## TypeScript での Vuex の書き方
 
@@ -98,7 +98,7 @@ const storeOptions: StoreOptions<RootState> = {
 export default () => new Vuex.Store<RootState>(storeOptions);
 ```
 
-ユーザー情報を取得 Action で、本来であれば HTTP リクエストを作成するところを今回はモックデータを使用する。
+ユーザー情報を取得には本来であれば HTTP リクエストを呼ぶところだが、今回はモックデータを使用する。
 
 #### app/nuxt/store/profile/actions.ts
 ```typescript
@@ -224,7 +224,7 @@ export default class extends Vue {
 ## Nuxt.js のテスト
 
 テストは [Jest](https://jestjs.io/) を使用して書いた。`new Builder(nuxt).build()` によって毎回ビルドが走るので、テストの実行が遅いのが難点。
-ちなみに [Testing - Nuxt.js](https://nuxtjs.org/examples/testing) を主に参考にした。
+なお [Testing - Nuxt.js](https://nuxtjs.org/examples/testing) を主に参考にした。
 
 #### app/nuxt/\_\_tests\_\_/index.test.ts
 ```typescript
@@ -266,7 +266,7 @@ afterAll(() => {
 
 ## Cloud Functions を使用した Nuxt.js の SSR（サーバサイドレンダリング）
 
-Cloud Functions 上に `ssr` という関数を作成する。SSR をするには Nuxt.js をビルドして出力したディレクトリを buildDir として設定する。
+Cloud Functions 上に `ssr` という関数を作成する。SSR をするには Nuxt.js で作られたアプリをビルドし、出力したディレクトリを buildDir として設定する。
 デプロイする JavaScript ファイルなどのプログラムは全て `dist/functions` 以下に出力するように設定しておく。 
 
 #### app/functions/src/ssr.ts
@@ -334,7 +334,7 @@ Firebase Hosting の設定で全てのリクエストで ssr を呼ぶように�
 }
 ```
 
-## Nuxt.js アプリの開発の流れ
+## アプリの開発の流れ
 
 Nuxt.js には開発用のコマンドが存在するので、Cloud Functions は基本的に開発時に使用する事はない。
 以下のコマンドを入力すれば、フロントエンドのアプリが立ち上がるので、`http://localhost:3000` にアクセスすれば良い。

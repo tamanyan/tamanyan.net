@@ -52,7 +52,11 @@ const Post = ({ data, site, options }) => {
         />
         {((pageUrl, title) => {
           if (isIndex == false) {
-            return <div className="bottom">{Socials({ link: pageUrl, text: title })}</div>
+            return (
+              <div className="bottom">
+                {Socials({ link: pageUrl, text: title })}
+              </div>
+            )
           }
         })(pageUrl, title)}
         {isMore ? Button({ path, label: 'MORE', primary: true }) : ''}

@@ -103,7 +103,9 @@ exports.createPages = ({ graphql, actions }) => {
         // Iterate through each post, putting all found tags into `tags`
         _.each(posts, edge => {
           if (_.get(edge, 'node.remark.frontmatter.category')) {
-            categories = categories.concat([edge.node.remark.frontmatter.category])
+            categories = categories.concat([
+              edge.node.remark.frontmatter.category,
+            ])
           }
         })
 
@@ -122,7 +124,6 @@ exports.createPages = ({ graphql, actions }) => {
         })
 
         /* ------------- Finish creating Category Pages ------------- */
-
       })
     )
   })

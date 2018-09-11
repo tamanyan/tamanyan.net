@@ -13,7 +13,6 @@ import 'animate.css/animate.css'
 // import 'font-awesome/css/font-awesome.css'
 
 class Layout extends React.Component {
-
   componentDidMount() {
     emergence.init()
   }
