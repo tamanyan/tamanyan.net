@@ -1,14 +1,6 @@
 @import 'scss/colors.scss';
 
 .footer {
-  @media screen and (max-width: 480px) {
-    margin-bottom: 80px;
-  }
-
-  @media screen and (min-width: 480px) {
-    margin-bottom: 40px;
-  }
-
   hr {
     border-color: $red;
     border-width: 3px;
