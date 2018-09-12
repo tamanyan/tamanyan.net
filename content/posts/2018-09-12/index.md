@@ -402,9 +402,9 @@ module.exports = {
 
 ## 悩みどころ
 
-### Cloud Functions はアクセスがこないと Cold Start から始まるので、起動が遅い
+### Cloud Functions はアクセスが少ないと Cold Start から起動するので遅い
 
-Cloud Functions の起動がやけに遅くて、これ本番で大丈夫なの？と心配になっていた。SSR が遅いとページの表示が遅くなるので相当危うい事態になる。しかし、アクセスが増えると解決された。
+Cloud Functions は開発中だと起動が遅く SSR に時間がかかっていた。「本番で大丈夫なのかな？」と心配になっていたが、アクセスが増えると解決された。
 
 ### Blue-Green Deployment
 
