@@ -28,6 +28,8 @@ const Post = ({ data, site, options }) => {
   const fixed = get(image, 'childImageSharp.fixed')
   const pageUrl = url + path
 
+  console.log( escape(title));
+
   return (
     <div className="article" key={path}>
       <div className="container">
@@ -41,7 +43,7 @@ const Post = ({ data, site, options }) => {
               {Badges({ items: [category], primary: true, type: 'categories' })}
               {Badges({ items: tags, type: 'tags' })}
             </div>
-            {Socials({ link: pageUrl, text: title })}
+            {Socials({ link: pageUrl, text: encodeURIComponent(title) })}
           </div>
         </div>
         <div
@@ -54,7 +56,7 @@ const Post = ({ data, site, options }) => {
           if (isIndex == false) {
             return (
               <div className="bottom">
-                {Socials({ link: pageUrl, text: title })}
+                {Socials({ link: pageUrl, text: encodeURIComponent(title) })}
               </div>
             )
           }
