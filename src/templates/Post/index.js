@@ -28,8 +28,6 @@ const Post = ({ data, site, options }) => {
   const fixed = get(image, 'childImageSharp.fixed')
   const pageUrl = url + path
 
-  console.log( escape(title));
-
   return (
     <div className="article" key={path}>
       <div className="container">
@@ -116,7 +114,7 @@ const Socials = ({ link, text }) => {
   return (
     <span className="social">
       <a
-        href={`https://b.hatena.ne.jp/entry/s/${link}`}
+        href={`https://b.hatena.ne.jp/entry/s/${link.replace('https://', '')}`}
         target="_blank"
         className="share-btn hatena"
       >
