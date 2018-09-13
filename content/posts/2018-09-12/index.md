@@ -1,6 +1,6 @@
 ---
 title: TypeScript + Nuxt.js + Firebase (+ SSR) で Web アプリを構築
-description: Firebase + Nuxt.js + TypeScript を用いて、SSR 可能な Web アプリを構築する。 
+description: Firebase + Nuxt.js + TypeScript を用いて、SSR に対応した Web アプリを構築する。 
 date: '2018-09-12T12:40:32.169Z'
 image: ./typescript-nuxtjs-firebase.jpg
 layout: post
@@ -13,7 +13,7 @@ tags:
 author: tamanyan
 ---
 
-Firebase 上に SSR を使用した Nuxt.js と TypeScript で Web アプリを作成する上での知見を共有する。
+Firebase + Nuxt.js + TypeScript を用いて、SSR に対応した Web アプリを構築する上での知見を共有する。
 
 #### この記事でわかる事
 
@@ -22,10 +22,9 @@ Firebase 上に SSR を使用した Nuxt.js と TypeScript で Web アプリを�
 - Firebase で Nuxt.js のアプリを SSR (サーバサイドレンダリング) する方法
 - Firebase の開発環境と本番環境の分け方
 
-コードを見たほうが一目瞭然なので、まず先に GitHub へのリンクを載せておく。
-<a href="https://github.com/tamanyan/nuxtjs-firebase" target="_blank">tamanyan/nuxtjs-firebase</a> を参考にしてくれれば良い。
+今回作成したサンプルは <a href="https://github.com/tamanyan/nuxtjs-firebase" target="_blank">tamanyan/nuxtjs-firebase</a> に公開しておくので、必要であれば見てほしい。
 
-作成した<a href="https://dev-nuxtjs-sample.firebaseapp.com/" target="_blank">サンプル Web アプリへのリンク</a>
+作成したサンプルアプリへの<a href="https://dev-nuxtjs-sample.firebaseapp.com/" target="_blank">リンク</a>
 
 <!--more-->
 
@@ -58,7 +57,7 @@ Vuex からモックのユーザー情報（Username/Email）を取得して表�
 vue init nuxt-community/typescript-template nuxtjs-firebase
 ```
 
-※ package.json を見ると TypeScript が 3 以上になっていないので、適宜修正する。
+※ package.json を見ると TypeScript の Version が 2 系になっているので、適宜修正する。
 
 ## TypeScript での Vuex の書き方
 
@@ -243,9 +242,9 @@ beforeAll(async () => {
   config.rootDir = resolve(__dirname, '..');
   config.ssr = true;
 
-  nuxt = new Nuxt(config)
+  nuxt = new Nuxt(config);
 
-  await new Builder(nuxt).build()
+  await new Builder(nuxt).build();
 });
 
 describe('Rendering test', () => {
@@ -336,7 +335,7 @@ Firebase Hosting の設定で全てのリクエストで ssr を呼ぶように�
 }
 ```
 
-## アプリの開発の流れ
+## 開発の流れ
 
 Nuxt.js には開発用のコマンドが存在するので、Cloud Functions は基本的に開発時に使用する事はない。
 以下のコマンドを入力すれば、フロントエンドのアプリが立ち上がるので、`http://localhost:3000` にアクセスすれば良い。
@@ -346,15 +345,24 @@ yarn dev
 ```
 
 しかし SSR の挙動を確かめたい場合には、一度 Nuxt.js 側をビルドして `dist/functions` に吐き出し、Cloud Functions Emulator を立ち上げる。
+後は `http://localhost:5000` アクセスすれば良い。
 
 ```bash
 yarn build # Build Nuxt app and Cloud Functions
 yarn serve # Launch local emulator
+$ firebase serve --only hosting,functions
+
+=== Serving from '<path_to_proj>/nuxtjs-firebase'...
+
+i  functions: Preparing to emulate functions.
+i  hosting: Serving hosting files from: public
+✔  hosting: Local server: http://localhost:5000
 ```
 
 ## 開発・本番環境の分け方
 
-基本的に同一アカウント内に開発環境 DevSampleApp と本番環境 SampleApp の両方を作成している。ステージング環境なども必要であれば適宜用意する。
+基本的に同一アカウント内に開発環境 dev-sample-app と本番環境 sample-app の両方を作成している。
+他にも環境なども必要であれば適宜用意する。
 
 ```json
 {
@@ -394,27 +402,27 @@ module.exports = {
 
 ## 悩みどころ
 
-### Cloud Functions はアクセスがこないと Cold Start から始まるので、起動が遅い
+### Cloud Functions はアクセスが少ないと Cold Start から起動するので遅い
 
-Cloud Functions の起動がやけに遅くて、これ本番で大丈夫なの？と心配になっていた。SSR が遅いとページの表示が遅くなるので相当危うい事態になる。アクセスが増えると解決された。
+Cloud Functions は開発中だと起動が遅く SSR に時間がかかっていた。「本番で大丈夫なのかな？」と心配になっていたが、アクセスが増えると解決された。
 
 ### Blue-Green Deployment
 
-デプロイ時のダウンタイムを無くしたいが、バージョンニングができないところが辛い。AWS Lambda だとできるみたいだが、その辺はきっと開発してくれると信じている。
+デプロイ時のダウンタイムはできれば無くしたい。しかしバージョンニングができないところが辛い。AWS Lambda だとできるみたいだが、その辺はきっと開発してくれると信じている。
 
 [AWS Lambda Function Versioning and Aliases](https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html)
 
 ### Google Cloud Functions Emulator が Node 6 しか対応していない
 
-Nuxt.js は version 1.0.0 以降から Node 8 以降しか対応していない。[Cloud Functions は Node 8 に対応できるようになった](https://cloud.google.com/functions/docs/concepts/nodejs-8-runtime)。しかし、ローカルでの開発をする上での [Google Cloud Functions Emulator](https://github.com/GoogleCloudPlatform/cloud-functions-emulator) が Node 6 しか対応していない（※ 2018/08/20 時点）。
+Nuxt.js は version 1.0.0 以降から Node 8 以降しか対応していない。[Cloud Functions は Node 8 に対応できるようになった](https://cloud.google.com/functions/docs/concepts/nodejs-8-runtime)。しかし、ローカルでの開発をする上での [Google Cloud Functions Emulator](https://github.com/GoogleCloudPlatform/cloud-functions-emulator) が Node 6 しか対応していない（※ 2018/09/12 時点）。
 
 > The Emulator only supports Node v6.x.x. It does not support Node v8.x.x or Python
 
-それでも無理やり使用すると一応ちゃんと動作している。デプロイ後は Emulator を使用しないので、今のところ目をつむっている。
+今の所構わず使用しているが、一応ちゃんと動作している。デプロイ後は Emulator を使用しないので、目をつむっている。
 
 ## Cloud Firestore との連携
 
-[Cloud Firestore](https://firebase.google.com/docs/firestore/) との連携を考えるのであれば、おそらく Vuex の中で使用する事になるだろう。Cloud Firestore は非常に強力だが、マルチプラットフォームが当たり前になっている現代だとビジネスロジックを何度も書く事になる大変だ。**直接の使用は一部に留め、 API にラップして使用した方が良い**かもしれない。私の場合は Cloud Functions の中で呼ぶことが多い。バックエンドだけでしか呼ばないのであれば、もはや [Cloud Datastore](https://cloud.google.com/datastore/docs/concepts/overview) で良いのではないかと思うこともある。
+[Cloud Firestore](https://firebase.google.com/docs/firestore/) との連携を考えるのであれば、おそらく Vuex の中で使用する事になるだろう。Cloud Firestore は非常に強力だが、マルチプラットフォームが当たり前になっている現代ではビジネスロジックを何度も書く事になる大変だ。**直接の使用は一部に留め、 API にラップして使用した方が良い**かもしれない。私の場合は Cloud Functions の中で呼ぶことが多い。バックエンドだけでしか呼ばないのであれば、もはや [Cloud Datastore](https://cloud.google.com/datastore/docs/concepts/overview) で良いのではないかと思うこともある。
 
 ## 参考URL
 
