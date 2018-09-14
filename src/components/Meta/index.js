@@ -32,7 +32,9 @@ const Meta = ({ site, title, url, image, description }) => {
           content: metaImage,
         },
       ]}
-    />
+    >
+      <html lang="ja" />
+    </Helmet>
   )
 }
 export default Meta

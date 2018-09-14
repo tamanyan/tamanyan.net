@@ -5,7 +5,7 @@ date: '2018-09-12T12:40:32.169Z'
 image: ./typescript-nuxtjs-firebase.jpg
 layout: post
 path: '/typescript-nuxtjs-firebase/'
-category: Programming
+category: Frontend
 tags:
   - TypeScript
   - Nuxt.js
