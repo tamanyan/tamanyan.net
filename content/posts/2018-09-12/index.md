@@ -65,7 +65,7 @@ Vuex には既に TypeScript の型定義ファイルが存在するので、特
 アプリがスケールする事を考え、`profile` という `module` を作成する事にする。
 
 ```bash
-> tree app/nuxt/store
+$ tree app/nuxt/store
 app/nuxt/store
 ├── index.ts
 ├── profile
@@ -341,15 +341,15 @@ Nuxt.js には開発用のコマンドが存在するので、Cloud Functions �
 以下のコマンドを入力すれば、フロントエンドのアプリが立ち上がるので、`http://localhost:3000` にアクセスすれば良い。
 
 ```bash
-yarn dev
+$ yarn dev
 ```
 
 しかし SSR の挙動を確かめたい場合には、一度 Nuxt.js 側をビルドして `dist/functions` に吐き出し、Cloud Functions Emulator を立ち上げる。
 後は `http://localhost:5000` アクセスすれば良い。
 
 ```bash
-yarn build # Build Nuxt app and Cloud Functions
-yarn serve # Launch local emulator
+$ yarn build # Build Nuxt app and Cloud Functions
+$ yarn serve # Launch local emulator
 $ firebase serve --only hosting,functions
 
 === Serving from '<path_to_proj>/nuxtjs-firebase'...

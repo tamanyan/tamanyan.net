@@ -52,6 +52,19 @@
     }
   }
 
+  h3 {
+    margin-top: 20px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+
+    @media screen and (max-width: 480px) {
+      font-size: 18px;
+    }
+
+    @media screen and (min-width: 480px) {
+    }
+  }
+
   h4 {
     font-weight: normal;
   }
