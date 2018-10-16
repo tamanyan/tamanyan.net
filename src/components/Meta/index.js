@@ -31,10 +31,6 @@ const Meta = ({ site, title, url, image, description }) => {
           property: 'og:image',
           content: metaImage,
         },
-        {
-          property: 'google-site-verification',
-          content: 'bqC3Rou08IfTSyHaAdHgZK3qKHiSLHVpdgfiEjylKwI',
-        },
       ]}
     >
       <html lang="ja" />
