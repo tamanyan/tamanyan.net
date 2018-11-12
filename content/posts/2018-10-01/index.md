@@ -16,9 +16,9 @@ author: tamanyan
 
 #### この記事で分かる事
 
-- Kunerbetes の基礎の基礎
+- Node.js Web App を Kubernetes クラスタ上に構築する方法
 - Docker for Mac Kubernetes の使い方
-- Node.js アプリを Kubernetes 上に構築する方法
+- Kubernetes Dashboard のインストール方法
 
 今回使ったサンプルは [tamanyan/k8s-node-sample](https://github.com/tamanyan/k8s-node-sample) にある。
 
@@ -28,7 +28,7 @@ Docker は触っていても Kubernetes は初めてという人は結構多い�
 
 「Kubernetes は、コンテナ化したアプリケーションのデプロイ、スケーリング、および管理を行うための、オープンソースのコンテナオーケストレーションシステムである」
 
-と書かれていても全くピンと来ない。まずオーケストレーションってなんだよ、曲でも作るのかと冗談のように考える人もいるだろう。
+と書かれていても全くピンと来ない。まずオーケストレーションってなんだよ、曲でも作るのか？と冗談のように考える人もいるだろう。
 
 <!--more-->
 
@@ -96,13 +96,13 @@ http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-da
 
 ## Node.js Web App を Kubernetes クラスタにデプロイ
 
-ようやく準備が完了したので、以下のアーキテクチャを構築を目標にする。
+ようやく準備が完了したので、以下のアーキテクチャを構築を目標にする。今回は `Service` と `Deployment` のみを使用する。
 
 ![Kunerbetes アーキテクチャ](./k8s_architecture.png)
 
 ### 1. サンプルプロジェクトを Clone
 
-#### サンプルプロジェクトを Github から Clone してくる。
+#### サンプルプロジェクトを Github から Clone する
 ```bash
 $ git clone https://github.com/tamanyan/k8s-node-sample.git
 ```
@@ -236,8 +236,10 @@ spec:
 
 ## まとめ
 
-今回はほぼ最小の構成で Node.js Web App をデプロイした。`Deployment` と `Service` は Kubernetes 上に構築したアプリを公開するのに最も重要な事だ。
+今回はほぼ最小の構成で Node.js Web App を Kubernetes クラスタにデプロイした。`Deployment` と `Service` は Kubernetes 上に構築したアプリを公開するのに最も基礎的な事である。
+
 
 ## 参考URL
 
 - [Kubernetes NodePort vs LoadBalancer vs Ingress? When should I use what?](https://medium.com/google-cloud/kubernetes-nodeport-vs-loadbalancer-vs-ingress-when-should-i-use-what-922f010849e0)
+- [Deploy Go application to Kubernetes in 30 seconds](https://medium.com/google-cloud/deploy-go-application-to-kubernetes-in-30-seconds-ebff0f51d67b)
