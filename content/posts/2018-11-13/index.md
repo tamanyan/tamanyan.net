@@ -152,7 +152,7 @@ function notifyGAReport() {
 
 ## まとめ
 
-今回は Google Analytics からデータを取得した。更に SpreadSheet や MySQL / Cloud SQL 等からのデータ取得が可能なほど、Google Apps Script の汎用性は高い。
+今回は Google Analytics からデータを取得、チャート作成を行った。更に SpreadSheet や MySQL / Cloud SQL 等からのデータ取得が可能なほど、Google Apps Script の汎用性は高い。
 
 ## 参考URL
 
