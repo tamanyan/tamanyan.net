@@ -2,7 +2,7 @@
 title: Google Apps Script + Google Charts を使って、画像付きのレポートを定期的に送信する
 description: Google Apps Script と Google Charts を使って、チャート画像を生成、メールに添付し送信する手法を説明する。
 date: '2018-11-12T23:40:32.169Z'
-image: ./email-result.png
+image: ./gas-reporting.png
 layout: post
 path: '/gas-reporting-google-charts/'
 category: DataScience
