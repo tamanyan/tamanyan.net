@@ -7,8 +7,8 @@ layout: post
 path: '/gas-reporting-google-charts/'
 category: DataScience
 tags:
-  - Google Apps Script
-  - Type Script
+  - GoogleAppsScript
+  - TypeScript
 author: tamanyan
 ---
 
@@ -17,9 +17,10 @@ Google Apps Script と Google Charts を使って、チャート画像を生成�
 #### この記事で分かる事
 
 - clasp の使い方
-- Google Charts の機能を Google Apps Script から使用する方法
+- Google Charts を Google Apps Script から使用する方法
 - Google Analytics のデータを Google Apps Script から引っ張ってくる方法
-- Google Apps Script を TypeScript で書く
+- E-Mail を Google Apps Script から送信する
+- Google Apps Script を TypeScript で書く方法
 
 完成形は以下な感じ
 
