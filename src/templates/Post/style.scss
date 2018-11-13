@@ -4,6 +4,8 @@
 .article {
   padding-top: 40px;
   padding-bottom: 10px;
+  word-wrap : break-word;
+  overflow-wrap : break-word;
 
   h1 {
     @media screen and (max-width: 480px) {

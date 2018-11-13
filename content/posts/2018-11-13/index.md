@@ -1,6 +1,6 @@
 ---
-title: Google Apps Script + Google Charts を使って、チャート画像付きのレポートを定期的に送信する
-description: Google Apps Script と Google Charts を使って、チャート画像を生成、メールに添付し送信する手法を説明する。
+title: Google Apps Script + Google Charts を使って、チャート画像付きのレポートを定期的にメール送信する
+description: Google Apps Script と Google Charts を使って、チャート画像を生成、メールに添付し定期的にメールを送信する手法を説明する。
 date: '2018-11-13T13:40:32.169Z'
 image: ./gas-reporting.png
 layout: post
@@ -153,9 +153,9 @@ function notifyGAReport() {
 
 ## まとめ
 
-今回は Google Analytics からデータを取得、チャート作成を行った。更に SpreadSheet や MySQL / Cloud SQL 等からのデータ取得が可能なほど、Google Apps Script の汎用性は高い。
+今回は Google Analytics からデータを取得、チャート作成を行った。更に SpreadSheet や MySQL / Cloud SQL 等からのデータ取得が可能なほど、Google Apps Script の汎用性は高い。ぜひ使って見てほしい。
 
 ## 参考URL
 
 - [Analytics Service | Apps Script | Google Developers](https://developers.google.com/apps-script/advanced/analytics)
-- [Class Chart | Apps Script | Google Developers](https://developers.google.com/apps-script/advanced/analytics)
+- [Chart Service | Apps Script | Google Developers](https://developers.google.com/apps-script/reference/charts)
