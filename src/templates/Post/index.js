@@ -17,6 +17,7 @@ const Post = ({ data, site, options }) => {
     description,
     title,
     path,
+    links,
     date,
     image,
     author,
@@ -27,6 +28,7 @@ const Post = ({ data, site, options }) => {
   const isMore = isIndex && !!html.match('<!--more-->')
   const fixed = get(image, 'childImageSharp.fixed')
   const pageUrl = url + path
+  const relatedLinks = links || []
 
   return (
     <div className="article" key={path}>
@@ -59,6 +61,7 @@ const Post = ({ data, site, options }) => {
             )
           }
         })(pageUrl, title)}
+        {(isIndex == false && relatedLinks.length > 0) ? RelatedArticles({ links: relatedLinks }) : ''}
         {isMore ? Button({ path, label: 'MORE', primary: true }) : ''}
         <hr />
         {isIndex == false ? Profile({ author: author }) : ''}
@@ -83,6 +86,21 @@ const getDescription = body => {
     }
   }
   return body
+}
+
+const RelatedArticles = ({ links }) => {
+  return (
+    <div className="related">
+      <h3>See also</h3>
+      <ul>
+        {(() => {
+          return map(links, (link, i) => {
+            return <li key={i}><div dangerouslySetInnerHTML={{ __html: link }} /></li>
+          })
+        })()}
+      </ul>
+    </div>
+  )
 }
 
 const Button = ({ path, label, primary }) => (

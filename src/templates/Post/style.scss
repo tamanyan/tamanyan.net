@@ -203,6 +203,19 @@
   }
 }
 
+.article .related {
+  margin-top: 36px;
+  margin-bottom: 36px;
+
+  img.icon {
+    margin-bottom: 0x !important;
+  }
+
+  ul {
+    padding-left: 1rem;
+  }
+}
+
 .article .profile {
   margin-top: 20px;
   margin-bottom: 20px;

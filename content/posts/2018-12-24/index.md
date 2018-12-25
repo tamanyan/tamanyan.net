@@ -9,6 +9,8 @@ category: Dairy
 tags:
   - Bangkok
   - Engineer
+links:
+  - <a href="/non-tech-company-engineer/">非 IT 企業のエンジニアとして働く</a>
 author: tamanyan
 ---
 
