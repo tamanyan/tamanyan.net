@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Tamanyan.net',
-    description: 'エンジニアリング・海外生活について書く',
+    title: 'バンコクで働くデータサイエンティストのブログ',
+    description: 'データサイエンス・ソフトウェアエンジニアリング・バンコクの生活について書く',
     siteUrl: 'https://tamanyan.net',
     twitter: 'tamanyan55',
     adsense: '',
@@ -52,9 +52,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Tamanyan.net',
-        short_name: 'Tamanyan.net',
-        description: 'エンジニアリング・海外生活について書く',
+        name: 'バンコクで働くデータサイエンティストのブログ',
+        short_name: 'バンコクで働くデータサイエンティストのブログ',
+        description: 'データサイエンス・ソフトウェアエンジニアリング・バンコクの生活について書く',
         homepage_url: 'https://tamanyan.net',
         start_url: '/',
         background_color: '#fff',
