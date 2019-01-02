@@ -101,7 +101,7 @@ plt.scatter(X, y, edgecolor='b', s=20, label="Samples")
 plt.xlabel("x")
 plt.ylabel("y")
 plt.xlim((0, 1))
-# plt.ylim((0, 12))
+plt.ylim((0, 12))
 plt.legend(loc="best")
 ```
 
@@ -129,11 +129,12 @@ plt.figure(figsize=(14, 7))
 plt.plot(degrees, validation_scores.mean(axis=1), lw=2,
          label='Cross Validation')
 plt.plot(degrees, train_scores.mean(axis=1), lw=2, label='Training')
-plt.legend(loc='best')
 plt.xlabel('Degree')
 plt.ylabel('Explained Variance')
 plt.title('Validation Curve')
 plt.xticks([1, 6, 11, 16, 21])
+plt.ylim((0.5, 1))
+plt.legend(loc='best')
 ```
 
 ### Learning Curve
