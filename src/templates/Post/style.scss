@@ -119,6 +119,18 @@
   }
 }
 
+.article .content span.katex-display {
+  @media screen and (max-width: 480px) {
+    margin-top: 0px;
+    margin-bottom: 30px;
+  }
+
+  @media screen and (min-width: 480px) {
+    margin-top: 0px;
+    margin-bottom: 36px;
+  }
+}
+
 .article .content blockquote {
   background-color: $gray-100;
   border-left: 5px solid $gray-200;

@@ -1,6 +1,8 @@
+const path = require(`path`)
+
 module.exports = {
   siteMetadata: {
-    title: 'バンコクで働くデータサイエンティストのブログ',
+    title: 'たまにゃんのデータサイエンス',
     description: 'データサイエンス・ソフトウェアエンジニアリング・バンコクの生活について書く',
     siteUrl: 'https://tamanyan.net',
     twitter: 'tamanyan55',
@@ -14,7 +16,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/content/posts/`,
+        path: path.join(__dirname, `content`, `posts`),
         name: 'posts',
       },
     },
@@ -46,14 +48,15 @@ module.exports = {
           'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
+          `gatsby-remark-katex`,
         ],
       },
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'バンコクで働くデータサイエンティストのブログ',
-        short_name: 'バンコクで働くデータサイエンティストのブログ',
+        name: 'たまにゃんのデータサイエンス',
+        short_name: 'たまにゃんのデータサイエンス',
         description: 'データサイエンス・ソフトウェアエンジニアリング・バンコクの生活について書く',
         homepage_url: 'https://tamanyan.net',
         start_url: '/',
@@ -91,7 +94,7 @@ module.exports = {
     'gatsby-plugin-catch-links',
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-react-next',
+    // 'gatsby-plugin-react-next',
     'gatsby-plugin-sass',
     'gatsby-plugin-sharp',
     'gatsby-plugin-sitemap',

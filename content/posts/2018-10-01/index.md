@@ -12,21 +12,21 @@ tags:
 author: tamanyan
 ---
 
-10 分でローカルの Kubernetes クラスタに Node.js で構築した Web App をデプロイする。
+10分でローカルのKubernetesクラスタにNode.jsで構築したWeb Appをデプロイする。
 
 #### この記事で分かる事
 
-- Node.js Web App を Kubernetes クラスタ上に構築する方法
-- Docker for Mac Kubernetes の使い方
-- Kubernetes Dashboard のインストール方法
+- Node.js Web AppをKubernetesクラスタ上に構築する方法
+- Docker for Mac Kubernetesの使い方
+- Kubernetes Dashboardのインストール方法
 
 今回使ったサンプルは [tamanyan/k8s-node-sample](https://github.com/tamanyan/k8s-node-sample) にある。
 
 ## Kubernetes を知る
 
-Docker は触っていても Kubernetes は初めてという人は結構多いのではないだろうか？
+Dockerは触っていてもKubernetesは初めてという人は結構多いのではないだろうか？
 
-「Kubernetes は、コンテナ化したアプリケーションのデプロイ、スケーリング、および管理を行うための、オープンソースのコンテナオーケストレーションシステムである」
+「Kubernetesは、コンテナ化したアプリケーションのデプロイ、スケーリング、および管理を行うための、オープンソースのコンテナオーケストレーションシステムである」
 
 と書かれていても全くピンと来ない。まずオーケストレーションってなんだよ、曲でも作るのか？と冗談のように考える人もいるだろう。
 
@@ -36,7 +36,7 @@ Docker は触っていても Kubernetes は初めてという人は結構多い�
 
 > オーケストレーション（英: Orchestration）は、複雑なコンピュータシステム/ミドルウェア/サービスの配備/設定/管理の自動化を指す用語。
 
-`Pod`, `Service`, `Node` など一般用語にもあるような独自の概念が出てきてイマイチとっつきにくい Kubernetes を理解するために、
+`Pod`, `Service`, `Node`など一般用語にもあるような独自の概念が出てきてイマイチとっつきにくいKubernetesを理解するために、
 まず以下の Video を見て雰囲気を感じてもらいたい。 英語だが、字幕をつけて絵だけ見ていても雰囲気を感じ取れると思う。
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4ht22ReBjno" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -49,11 +49,11 @@ Docker は触っていても Kubernetes は初めてという人は結構多い�
 
 ## Kubernetes を有効にする
 
-Docker アプリから Preferences を開き、Apply を押して有効にする。
+Docker アプリからPreferencesを開き、Applyを押して有効にする。
 
 ![Docker for Mac の設定](./docker_for_mac_k8s.png)
 
-使用する Cluster を `docker-for-desktop` に変更する。
+使用するClusterを`docker-for-desktop`に変更する。
 
 ```
 $ kubectl config use-context docker-for-desktop
@@ -61,7 +61,7 @@ $ kubectl config use-context docker-for-desktop
 
 ## Kubernetes Dashboard をインストール
 
-Kubernetes Cluster の状態確認するために Web UI [kubernetes/dashboard](https://github.com/kubernetes/dashboard) をインストールする。
+Kubernetes Clusterの状態確認するためにWeb UI [kubernetes/dashboard](https://github.com/kubernetes/dashboard)をインストールする。
 
 ```bash
 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
@@ -88,21 +88,21 @@ subjects:
 $ kubectl proxy
 ```
 
-以下の URL にアクセスする
+以下のURLにアクセスする
 
 http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
 
 ![Kubernetes Dashboard](./k8s_dashboard.png)
 
-## Node.js Web App を Kubernetes クラスタにデプロイ
+## Node.js Web AppをKubernetesクラスタにデプロイ
 
-ようやく準備が完了したので、以下のアーキテクチャを構築を目標にする。今回は `Service` と `Deployment` のみを使用する。
+ようやく準備が完了したので、以下のアーキテクチャを構築を目標にする。今回は`Service`と`Deployment`のみを使用する。
 
 ![Kunerbetes アーキテクチャ](./k8s_architecture.png)
 
-### 1. サンプルプロジェクトを Clone
+### 1. サンプルプロジェクトをClone
 
-#### サンプルプロジェクトを Github から Clone する
+#### サンプルプロジェクトをGithubからCloneする
 ```bash
 $ git clone https://github.com/tamanyan/k8s-node-sample.git
 ```
@@ -160,14 +160,14 @@ app.get('/', (req, res) => {
 app.listen(port, () => console.log(`Sample app listening on port ${port}!`))
 ```
 
-### 2. Node App の Docker Image をビルド
+### 2. Node AppのDocker Imageをビルド
 
 ```bash
 $ make build
 docker build --no-cache -t gcr.io/myproject/node-app:v1 node-app
 ```
 
-### 3. Node App のデプロイ
+### 3. Node Appのデプロイ
 
 ```bash
 $ make deploy
@@ -177,13 +177,13 @@ kubectl apply -f k8s/service.yaml
 service/sample-node-app-service configured
 ```
 
-### 4. Node.js Web App のデプロイ
+### 4. Node.js Web Appのデプロイ
 
 http://localhost にアクセス
 
 ![Node.js サンプルアプリ](./node_sample.png)
 
-### 5. Node.js Web App の削除
+### 5. Node.js Web Appの削除
 
 ```bash
 $ make clean
@@ -193,7 +193,7 @@ kubectl delete -f k8s/service.yaml
 service "sample-node-app-service" deleted
 ```
 
-## Kubernetes のマニフェストファイルの中身
+## Kubernetesのマニフェストファイルの中身
 
 #### deployment.yaml
 ```yaml
@@ -236,7 +236,7 @@ spec:
 
 ## まとめ
 
-今回はほぼ最小の構成で Node.js Web App を Kubernetes クラスタにデプロイした。`Deployment` と `Service` は Kubernetes 上に構築したアプリを公開するのに最も基礎的な事である。
+今回はほぼ最小の構成でNode.js Web AppをKubernetesクラスタにデプロイした。`Deployment`と`Service`はKubernetes上に構築したアプリを公開するのに最も基礎的な事である。
 
 
 ## 参考URL
