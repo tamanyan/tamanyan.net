@@ -1,4 +1,4 @@
-# Tamanyan.net
+# たまにゃんのデータサイエンス
 
 This blog is powered by Gatsby and Bootstrap
 

@@ -12,15 +12,15 @@ tags:
 author: tamanyan
 ---
 
-Google Apps Script と Google Charts を使って、チャート画像を生成、メールに添付し送信する手法を説明する。
+Google Apps ScriptとGoogle Chartsを使って、チャート画像を生成、メールに添付し送信する手法を説明する。
 
 #### この記事で分かる事
 
 - clasp の使い方
-- Google Charts を Google Apps Script から使用する方法
-- Google Analytics のデータを Google Apps Script から引っ張ってくる方法
-- E-Mail を Google Apps Script から送信する
-- Google Apps Script を TypeScript で書く方法
+- Google ChartsをGoogle Apps Scriptから使用する方法
+- Google AnalyticsのデータをGoogle Apps Scriptから引っ張ってくる方法
+- E-MailをGoogle Apps Scriptから送信する
+- Google Apps ScriptをTypeScriptで書く方法
 
 完成形は以下な感じ
 
@@ -153,7 +153,7 @@ function notifyGAReport() {
 
 ## まとめ
 
-今回は Google Analytics からデータを取得、チャート作成を行った。更に SpreadSheet や MySQL / Cloud SQL 等からのデータ取得が可能なほど、Google Apps Script の汎用性は高い。ぜひ使って見てほしい。
+今回はGoogle Analyticsからデータを取得、チャート作成を行った。更にSpreadSheetやMySQL / Cloud SQL等からのデータ取得が可能なほど、Google Apps Scriptの汎用性は高い。ぜひ使って見てほしい。
 
 ## 参考URL
 

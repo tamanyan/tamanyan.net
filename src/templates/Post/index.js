@@ -9,6 +9,7 @@ import Img from 'gatsby-image'
 import Adsense from 'components/Adsense'
 import Footer from 'components/Footer'
 import './style.scss'
+import 'katex/dist/katex.min.css'
 
 const Post = ({ data, site, options }) => {
   const {
