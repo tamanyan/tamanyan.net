@@ -1,6 +1,6 @@
 ---
 title: scikit-learn 線形回帰で過学習と未学習を学ぶ
-description: test
+description: scikit-learn・線形回帰を用いて過学習（オーバーフィッティング）と未学習（アンダーフィッティング）について学ぶ
 date: '2019-01-02T13:40:32.169Z'
 image: ./overfitting-underfitting.png
 layout: post
@@ -12,11 +12,21 @@ tags:
 author: tamanyan
 ---
 
-線形回帰を用いて過学習（オーバーフィッティング）と未学習（アンダーフィッティング）について学ぶ。
+線形回帰を用いて過学習（オーバーフィッティング）と未学習（アンダーフィッティング）について学ぶ。プログラムは以下に置いておく。
+
+<div class="article-widget">
+  <a class="article-widget-image" href="https://github.com/tamanyan/tamanyan.net/blob/master/samples/overfitting-underfitting-linear-regression/Overfitting%20and%20Underfitting%20of%20Linear%20Regression.ipynb" style="background-image: url('https://avatars0.githubusercontent.com/u/2387508?s=460&v=4');" target="_blank">
+  </a>
+  <a href="https://github.com/tamanyan/tamanyan.net/blob/master/samples/overfitting-underfitting-linear-regression/Overfitting%20and%20Underfitting%20of%20Linear%20Regression.ipynb" target="_blank">
+    <strong class="article-widget-title">tamanyan.net/Overfitting and Underfitting of Linear Regression.ipynb</strong>
+    <em class="article-widget-description">Tamanyan Blog is powered by Gatsby. Contribute to tamanyan/tamanyan.net development by creating an account on GitHub.</em>
+    <em class="article-widget-url">github.com</em>
+  </a>
+</div>
 
 ## 線形回帰と過学習と未学習
 
-線形回帰とは入力$X$に対して入力に合うような$θ$を決定する事である。ここでは、一次元の入力サンプルデータに対して、単回帰・多項式回帰を用いて、予測モデルを作成してみる。
+線形回帰とは入力$X$に対して、フィットするような$θ$を決定する事である。ここでは、一次元の入力サンプルデータに対して、単回帰・多項式回帰を用いて、予測モデルを作成してみる。
 
 $$
 h_θ(X) = θ_0 x_0 + θ_1 x_1 + ... + θ_n x_n = θ^T X

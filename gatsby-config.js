@@ -2,7 +2,7 @@ const path = require(`path`)
 
 module.exports = {
   siteMetadata: {
-    title: 'Tamanyan.net | バンコクで働く機械学習エンジニアが書くブログ',
+    title: 'Tamanyan.net | たまにゃんのエンジニアブログ',
     description: 'ソフトウェアエンジニアリング・データサイエンス・バンコクの生活について書く。',
     siteUrl: 'https://tamanyan.net',
     twitter: 'tamanyan55',
@@ -55,8 +55,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Tamanyan.net | バンコクで働く機械学習エンジニアが書くブロ',
-        short_name: 'Tamanyan.net | バンコクで働く機械学習エンジニアが書くブロ',
+        name: 'Tamanyan.net | たまにゃんのエンジニアブログ',
+        short_name: 'Tamanyan.net | たまにゃんのエンジニアブログ',
         description: 'ソフトウェアエンジニアリング・データサイエンス・バンコクの生活について書く。',
         homepage_url: 'https://tamanyan.net',
         start_url: '/',
