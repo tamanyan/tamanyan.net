@@ -5,10 +5,10 @@ date: '2018-12-24T13:40:32.169Z'
 image: ./buddhist.jpg
 layout: post
 path: '/software-engineer-2018-bangkok/'
-category: Dairy
+category: Engineer
 tags:
   - Bangkok
-  - Engineer
+  - Career
 links:
   - <a href="/non-tech-company-engineer/">非 IT 企業のエンジニアとして働く</a>
 author: tamanyan

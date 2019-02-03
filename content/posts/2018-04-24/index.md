@@ -7,6 +7,7 @@ layout: post
 path: '/non-tech-company-engineer/'
 category: Engineer
 tags:
+  - Career
   - DX
 author: tamanyan
 ---
