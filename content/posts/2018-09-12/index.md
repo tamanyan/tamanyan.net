@@ -6,12 +6,16 @@ image: ./typescript-nuxtjs-firebase.jpg
 layout: post
 path: '/typescript-nuxtjs-firebase/'
 category: Frontend
+links:
+  - <a href="/nuxt-ts-netlify/">Nuxt.js (TypeScript) on Netlifyの良さを広めたい</a>
 tags:
   - TypeScript
   - Nuxt.js
   - Firebase
 author: tamanyan
 ---
+
+（追記）Nuxt.jsが2.4.0から公式でTypeScriptをサポートし始めた。コードの中身はそのまま使えるが、ビルド部分の設定は[この記事](/nuxt-ts-netlify/)のレポジトリなど参考にした方が良い。
 
 Firebase + Nuxt.js + TypeScript を用いて、SSR に対応した Web アプリを構築する上での知見を共有する。
 
