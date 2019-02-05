@@ -1,4 +1,4 @@
-# たまにゃんのデータサイエンス
+# たまにゃんのエンジニアブログ
 
 This blog is powered by Gatsby and Bootstrap
 

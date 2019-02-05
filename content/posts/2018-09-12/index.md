@@ -8,6 +8,7 @@ path: '/typescript-nuxtjs-firebase/'
 category: Frontend
 links:
   - <a href="/nuxt-ts-netlify/">Nuxt.js (TypeScript) on Netlifyの良さを広めたい</a>
+  - <a href="/netlify-functions-split-testing/">Nuxt.js (TypeScript) on Netlify、Functions / Split Testingで簡単にA/Bテストまでやってみる</a>
 tags:
   - TypeScript
   - Nuxt.js

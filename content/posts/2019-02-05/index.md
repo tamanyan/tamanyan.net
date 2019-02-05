@@ -7,6 +7,7 @@ layout: post
 path: '/nuxt-ts-netlify/'
 category: Frontend
 links:
+  - <a href="/netlify-functions-split-testing/">Nuxt.js (TypeScript) on Netlify、Functions / Split Testingで簡単にA/Bテストまでやってみる</a>
   - <a href="/typescript-nuxtjs-firebase/">TypeScript + Nuxt.js + Firebase (+ SSR)でWebアプリを構築</a>
   - <a href="/gas-reporting-google-charts/">Google Apps Script + Google Charts を使って、チャート画像付きのレポートを定期的にメール送信する</a>
 tags:
@@ -90,7 +91,7 @@ Netlifyはブランチへのプッシュごとに自動ビルド・デプロイ�
 
 ![デプロイコマンド](./deploy-cmd.png)
 
-このあとトップページに行くと、公開URLが見えているので、それをクリックすると終わり。わーすごい簡単。頭が馬鹿になりそう。
+このあとトップページに行くと、公開URLが見えているので、それをクリックすると終わり。わーすごい簡単。頭が馬鹿になりそう。完成したサンプルは[ここのURL](https://thirsty-hodgkin-caaecc.netlify.com/)に置いておく。
 
 ![Nuxt TypeScriptのサンプルサイト](./website.png)
 

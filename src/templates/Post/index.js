@@ -148,7 +148,7 @@
           <i className="fa fa-hatena" />
         </a>
         <a
-          href={`https://twitter.com/share?url=${link}&text=${text}&hashtags=tamanyannet`}
+          href={`https://twitter.com/share?url=${link}&text=${text + ' @tamanyan55'}&hashtags=tamanyannet`}
           target="_blank"
           className="share-btn twitter"
         >
