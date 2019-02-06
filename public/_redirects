@@ -1,1 +1,4 @@
-http://pensive-swirles-4e068b.netlify.com/* http://tamanyan.net/:splat 301!
+http://pensive-swirles-4e068b.netlify.com/* http://tamanyan.me/:splat 301!
+https://pensive-swirles-4e068b.netlify.com/* https://tamanyan.me/:splat 301!
+http://tamanyan.net/* http://tamanyan.me/:splat 301!
+https://tamanyan.net/* https://tamanyan.me/:splat 301!
