@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: 'Tamanyan.net | たまにゃんのエンジニアブログ',
     description: 'ソフトウェアエンジニアリング・データサイエンス・バンコクの生活について書く。',
-    siteUrl: 'https://tamanyan.net',
+    siteUrl: 'https://tamanyan.me',
     twitter: 'tamanyan55',
     adsense: '',
   },
@@ -59,7 +59,7 @@ module.exports = {
         name: 'Tamanyan.net | たまにゃんのエンジニアブログ',
         short_name: 'Tamanyan.net | たまにゃんのエンジニアブログ',
         description: 'ソフトウェアエンジニアリング・データサイエンス・バンコクの生活について書く。',
-        homepage_url: 'https://tamanyan.net',
+        homepage_url: 'https://tamanyan.me',
         start_url: '/',
         background_color: '#fff',
         theme_color: '#3f51b5',
