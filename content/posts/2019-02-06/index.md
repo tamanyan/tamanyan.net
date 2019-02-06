@@ -1,6 +1,6 @@
 ---
 title: Nuxt.js (TypeScript) on Netlify、Functions / Split Testingで簡単にA/Bテストまでやってみる
-description: 近年JAMStackが注目されていて、Nuxt.js (TypeScript) on Netlifyの静的Webサイトが熱いので共有する
+description: Nuxt.js (TypeScript) on NetlifyでFunctionsやSplit Testingを使って、最終的にA/Bテストまで行った
 date: '2019-02-06T22:40:32.169Z'
 image: ./ab.png
 layout: post
