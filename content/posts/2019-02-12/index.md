@@ -1,7 +1,7 @@
 ---
 title: 私が東南アジアのエンジニア海外就職をオススメしない理由
 description: キャリアアップ視点で、東南アジア就職に関して
-date: '2019-02-11T22:40:32.169Z'
+date: '2019-02-12T22:40:32.169Z'
 image: ./asia.png
 layout: post
 path: '/career-opportunity-in-southeast-asia/'
