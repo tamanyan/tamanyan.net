@@ -44,7 +44,7 @@ author: tamanyan
 参考までにバンコクで有名な[Agoda](https://careersatagoda.com/vacancies/)を例に考えてみる。この会社はあまり給与情報を公開していないが、QuoraでAgodaのSenior Software Developerが回答していたので、そこの言葉を信じてみる。
 
 <div class="article-widget">
-  <a class="article-widget-image" href="https://www.quora.com/What-is-the-salary-of-a-software-engineer-in-Agoda-Bangkok-with-5-years-experience-in-Java-JEE" style="background-image: url('https://pbs.twimg.com/card_img/1093087000394063874/mR_hzD1S?format=jpg&name=144x144_2');" target="_blank">
+  <a class="article-widget-image" href="https://www.quora.com/What-is-the-salary-of-a-software-engineer-in-Agoda-Bangkok-with-5-years-experience-in-Java-JEE" style="background-image: url('https://qph.fs.quoracdn.net/main-custom-t-7249-600x315-lusxrkycuejsfvmmkfygfxnqzfvkqcvy.jpeg');" target="_blank">
   </a>
   <a href="https://www.quora.com/What-is-the-salary-of-a-software-engineer-in-Agoda-Bangkok-with-5-years-experience-in-Java-JEE" target="_blank">
     <strong class="article-widget-title">What is the salary of a software engineer in Agoda, Bangkok with 5 years experience in Java/JEE?</strong>
@@ -59,7 +59,7 @@ author: tamanyan
 
 仮にあなたがAgodaのSenior Software Developerで３ヶ月ボーナスが与えられた時の事を考えると、年収は165万バーツ（約580万円）。これを東京のソフトウェアエンジニアが聞いてが聞いて高いか低いかを考えると、おそらく「普通」と答えるのではないか？
 
-今の東京のソフトウェアエンジニアの事情はそこそこ優秀なソフトウェアエンジニアであれば、新卒から2,3年経過して転職すると年収で600万円以上になる事が多い。東京のシニアエンジニアレベルになると800万円以上でスカウトしてくる企業も珍しくなくなってきた。
+今日の東京のソフトウェアエンジニアの事情だとそこそこ優秀であれば、新卒から2,3年経過して転職すると年収600万円以上になる事が多い。東京のシニアエンジニアレベルになると年収800万円以上でスカウトしてくる企業も珍しくなくなってきた。
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">エンジニアの新卒は適正不明で当たり外れが大きいので、雇う側が350~400スタートの気持ちはわかるんだけど、使えるとわかった2年目, 3年目は転職市場で500万〜 600万〜の値段がつくのに短期間で昇給するシステムを持つ会社がないので、転職すると市場価値で是正されるのが転職すると150万上がるの話</p>&mdash; 死後強まるツイート (@mizchi) <a href="https://twitter.com/mizchi/status/1088505957674414080?ref_src=twsrc%5Etfw">January 24, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
