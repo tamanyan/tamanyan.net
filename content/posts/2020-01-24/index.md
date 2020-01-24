@@ -2,7 +2,7 @@
 title: タイ現地採用の雇用形態とデジタル人材について
 description: タイで働く現地採用が雇用形態とデジタル人材について話す。
 date: '2020-01-24T20:40:32.169Z'
-image: ./asia.png
+image: ./work.jpg
 layout: post
 path: '/thai-expat-employment-and-digital-talent/'
 category: Engineer
