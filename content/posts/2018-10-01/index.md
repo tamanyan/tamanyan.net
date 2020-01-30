@@ -1,6 +1,6 @@
 ---
-title: 10 分で Kubernetes クラスタに Node.js Web App をデプロイする
-description: 10 分でローカルの Kubernetes クラスタに Node.js で構築した Web App をデプロイする方法を説明する。
+title: 10分でKubernetesクラスタにNode.js Web Appをデプロイする
+description: 10分でローカルのKubernetesクラスタにNode.jsで構築したWeb Appをデプロイする方法を説明する。
 date: '2018-10-01T23:40:32.169Z'
 image: ./k8s_architecture.png
 layout: post
