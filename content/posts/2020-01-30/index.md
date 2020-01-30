@@ -144,7 +144,7 @@ VPCのサイズは16アドレス（/28 ネットマスク）から65,536（/16 �
 <h4><strong>Small</strong></h4>
 
 - Netmask: /21
-- Subnet Size: /27
+- Subnet Size: /24
 - Hosts/Subnet*: 251
 - Subnets/VPC: 8
 - Total IPs*: 2008
