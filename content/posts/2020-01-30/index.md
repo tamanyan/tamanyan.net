@@ -7,7 +7,7 @@ layout: post
 path: '/aws-single-vpc-design/'
 category: Backend
 links:
-  - <a href=/deploy-node-app-to-kubernetes-in-10-mins/">10分でKubernetesクラスタにNode.js Web Appをデプロイする</a>
+  - <a href="/deploy-node-app-to-kubernetes-in-10-mins/">10分でKubernetesクラスタにNode.js Web Appをデプロイする</a>
   - <a href="/typescript-nuxtjs-firebase/">TypeScript + Nuxt.js + Firebase (+ SSR)でWebアプリを構築</a>
 tags:
   - AWS
