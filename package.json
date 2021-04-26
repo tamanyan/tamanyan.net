@@ -34,10 +34,10 @@
     "gatsby-transformer-yaml": "2.1.6"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-svg-core": "1.2.2",
-    "@fortawesome/free-brands-svg-icons": "5.2.0",
-    "@fortawesome/free-solid-svg-icons": "5.2.0",
-    "@fortawesome/react-fontawesome": "0.1.1",
+    "@fortawesome/fontawesome-svg-core": "1.2.35",
+    "@fortawesome/free-brands-svg-icons": "5.15.3",
+    "@fortawesome/free-solid-svg-icons": "5.15.3",
+    "@fortawesome/react-fontawesome": "0.1.14",
     "animate.css": "3.7.0",
     "babel-eslint": "8.2.6",
     "bootstrap": "4.1.3",
